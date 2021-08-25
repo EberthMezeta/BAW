@@ -18,25 +18,10 @@ $output = curl_exec($ch);
 curl_close($ch);
 
 $result = json_decode($output, true);
-/*
-$Cadena = '';
-foreach ($result['query']['search'] as $key => $value) {
 
-    $Cadena .= '<a href="https://' . $Language . '.wikipedia.org/?curid=' . $value['pageid'] . '">';
-    $Cadena .= '<h2>' . $value['title'] . '</h2>' . "\n";
-    $Cadena .= '</a>';
-}
-*/
 $Cadena = getHtml($result,$Language);
 echo $Cadena;
 
-/*
-if ($result['query']['search'][0]['title'] == $Search){
-    echo("Your search page '" . $Search . "' exists on English Wikipedia" . "\n" );
-
-}
-echo var_dump($result);
-*/
 function getLanguage()
 {
     $language = substr($_SERVER["HTTP_ACCEPT_LANGUAGE"], 0, 2);
