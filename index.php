@@ -12,10 +12,7 @@
    <?php echo include('components/searchbar.php');?>
     
     <div id="articles-container">
-        <?php
-            
-            
-        ?>
+ 
     </div>
    <script src="./assets/javascript/index.js"></script>
 </body>
