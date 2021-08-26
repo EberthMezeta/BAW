@@ -27,6 +27,7 @@ const getResponse = async () => {
     containerArticles.innerHTML = await res.text();
   } catch (error) {
     console.log(error);
+    containerArticles.innerHTML = "ocurrio un error indesperado";
   }
 };
 

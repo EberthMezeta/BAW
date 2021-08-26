@@ -19,7 +19,7 @@ curl_close($ch);
 
 $result = json_decode($output, true);
 
-$Cadena = getHtml($result,$Language);
+$Cadena = getHtml($result, $Language);
 echo $Cadena;
 
 function getLanguage()
@@ -30,13 +30,17 @@ function getLanguage()
 
 function getHtml($results, $language)
 {
-    $Cadena = '';
+    $Cadena = '   <div class="title-results">
+    <h2>
+        Se encontraron los siguientes resultados:
+    </h2>
+</div>';
     foreach ($results['query']['search'] as $value) {
-        $Cadena .= '<div>';
+        $Cadena .= '<div class="article-container">';
         $Cadena .= '<a href="https://' . $language . '.wikipedia.org/?curid=' . $value['pageid'] . '">';
         $Cadena .= '<h2>' . $value['title'] . '</h2>' . "\n";
-        $Cadena .= '<div>'. $value['snippet'] . '</div>';
         $Cadena .= '</a>';
+        $Cadena .= '<div class="fragment-article" >' . $value['snippet'] . '</div>';
         $Cadena .= '</div>';
     }
     return $Cadena;

@@ -10,7 +10,7 @@
 <body>
    <?php echo include('components/tittle.php');?>
    <?php echo include('components/searchbar.php');?>
-    
+
     <div id="articles-container">
  
     </div>
