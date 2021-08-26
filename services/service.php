@@ -35,11 +35,11 @@ function getHtml($results, $language)
         </div>';
 
     foreach ($results as $value) {
-        $Cadena .= '<div class="article-conta$Datar">';
+        $Cadena .= '<div class="article-container">';
         $Cadena .= '<a href="https://' . $language . '.wikipedia.org/?curid=' . $value['pageid'] . '">';
         $Cadena .= '<h2>' . $value['title'] . '</h2>' . "\n";
         $Cadena .= '</a>';
-        $Cadena .= '<p>' . $value['size'] . '</p>' . "\n";
+        $Cadena .= '<p>' . $value['timestamp'] . '</p>' . "\n";
         $Cadena .= '<div class="fragment-article" >' . $value['snippet'] . '</div>';
         $Cadena .= '</div>';
     }
